@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="computador_marca" Type="nvarchar" MaxLength="100" />
+          <Property Name="computador_modelo" Type="nvarchar" MaxLength="100" />
+          <Property Name="placa_mae" Type="nvarchar" MaxLength="100" />
+          <Property Name="memoria" Type="nvarchar" MaxLength="100" />
+          <Property Name="hd_marca" Type="nvarchar" MaxLength="100" />
+          <Property Name="hd_modelo" Type="nvarchar" MaxLength="100" />
+          <Property Name="velocidade_processador" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="PCModelStoreContainer">
+          <EntitySet Name="PC" EntityType="Self.PC" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="computador_marca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="computador_modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="placa_mae" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="memoria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="hd_marca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="hd_modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="velocidade_processador" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="PCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PC" EntityType="Self.PC" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PCModelStoreContainer" CdmEntityContainer="PCEntities">
+          <EntitySetMapping Name="PC">
+            <EntityTypeMapping TypeName="PCModel.PC">
+              <MappingFragment StoreEntitySet="PC">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="computador_marca" ColumnName="computador_marca" />
+                <ScalarProperty Name="computador_modelo" ColumnName="computador_modelo" />
+                <ScalarProperty Name="placa_mae" ColumnName="placa_mae" />
+                <ScalarProperty Name="memoria" ColumnName="memoria" />
+                <ScalarProperty Name="hd_marca" ColumnName="hd_marca" />
+                <ScalarProperty Name="hd_modelo" ColumnName="hd_modelo" />
+                <ScalarProperty Name="velocidade_processador" ColumnName="velocidade_processador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

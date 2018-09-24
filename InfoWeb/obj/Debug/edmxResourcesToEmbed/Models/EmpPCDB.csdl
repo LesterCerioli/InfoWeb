@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PC">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="computador_marca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="computador_modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="placa_mae" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="memoria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hd_marca" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="hd_modelo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="velocidade_processador" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="PCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PC" EntityType="Self.PC" />
+  </EntityContainer>
+</Schema>
